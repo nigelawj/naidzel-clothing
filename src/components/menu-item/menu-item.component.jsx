@@ -1,9 +1,9 @@
 import React from 'react';
 import './menu-item.styles.scss';
 
-const MenuItem = ({ title, imageURL, size }) => {
+const MenuItem = ({ title, imageURL, size, history, linkURL, match }) => {
   return (
-    <div className={`${size} menu-item`}>
+    <div className={`${size} menu-item`} onClick={() => history.pushState(`${match.url}${linkURL}`)}>
       <div
         className="background-image"
         style={{
